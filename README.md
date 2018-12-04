@@ -1,9 +1,9 @@
 Hackintosh 10.14.1 guide for HP Elitebook 840 G1
 
-This is a guide for HP Elitebook 840 G1 with macOS Mojave 10.14.1 Vanilla install, based on RehabMan's [HP guide](https://www.tonymacx86.com/threads/guide-hp-probook-elitebook-zbook-using-clover-uefi-hotpatch.261719/).
+This is a guide for HP Elitebook 840 G1 with macOS Mojave 10.14.1 Vanilla install, based on RehabMan's [HP guide](https://www.tonymacx86.com/threads/guide-hp-probook-elitebook-zbook-using-clover-uefi-hotpatch.261719/). [This guide](https://hackintosh.gitbook.io/-r-hackintosh-vanilla-desktop-guide/) is also really useful.
 
 My 840 G1 config:
-- **CPU**: i5-4210U 
+- **CPU**: i5-4210U (Haswell)
 - **SSD**: ADATA 128GB
 - **RAM**: 8GB DDR3
 - **DISPLAY**: 1600x900 (non-touch)
@@ -26,7 +26,7 @@ I think this one is the hardest part. You need the Mojave installer file from th
    
    - Here click on the "Change Install Location..." first, select the USB and then click on "Customize". In the Customize menu, select "Install for UEFI booting only" and "Install Clover in the ESP", among the Drivers64UEFI leave the ones that are already selected, but tick the VBoxHFS-64 and ApfsDriverLoader-64. Install and you are done.
    - Download the essential kexts from Rehabman's repo: [USBInjectAll](https://bitbucket.org/RehabMan/os-x-usb-inject-all/downloads/), [VoodooPS2Controller](https://bitbucket.org/RehabMan/os-x-voodoo-ps2-controller/downloads/), [FakeSMC](https://bitbucket.org/RehabMan/os-x-fakesmc-kozlek/downloads/), [IntelMausiEthernet](https://bitbucket.org/RehabMan/os-x-intel-network/downloads/), [Lilu](https://github.com/acidanthera/Lilu/releases), [WhateverGreen](https://github.com/acidanthera/WhateverGreen/releases) unzip them, copy the .kext files from the Release folders.<img src="/images/cloverconfig.png" width=700>
-   - Now we need to download [Clover Configurator](https://mackie100projects.altervista.org/download-clover-configurator/). Install it, then open it. Under the "Mount EFI" section find you'r USB's EFI Partition and click on "Mount Partition". Now you'll see a new EFI partition in your Finder. Open it and navigate to EFI->CLOVER->kexts->Other and copy the previously downloaded and extracted kexts. 
+   - Now we need to download [Clover Configurator](https://mackie100projects.altervista.org/download-clover-configurator/). Install it, then open it. Under the "Mount EFI" section find your USB's EFI Partition and click on "Mount Partition". Now you'll see a new EFI partition in your Finder. Open it and navigate to EFI->CLOVER->kexts->Other and copy the previously downloaded and extracted kexts. 
    - Download the USBconfig.plist file from [my repository](/usbconfig.plist) and paste it to the USB's EFI Partition in EFI->CLOVER, then rename it to config.plist. You can delete the old one or if you want to play it safe, rename it to something else.
    - If my usbconfig.plist doesn't work for you, you have to make one for yourself or download one from somewhere else.
    
@@ -55,6 +55,54 @@ Save and reboot.
 
 5. When this screen appears, just click on Next, Next, Next, set your location, set your username, etc. Don't forget to turn off sharing your analytic data with apple and your location.<img src="/images/installwelcome.jpg" width=500>
 
+Congrats, you have a working MacOS Mojave on your Elitebook, but it can't boot without your USB and a bunch of things don't work yet.
 
-   
-   
+## Post Install
+
+We are going to fix the trackpad, the sound, the brightness keys and the battery with Rehabman's SSDT patches.
+You should have internet connection on LAN, because Clover injected the IntelMausi kext.
+You can open this guide on your freshly installed Mac Mojave and copy every Terminal command.
+Don't reboot your computer until you finish with every step!
+
+1. First install [Rehabman's Clover bootloader](https://bitbucket.org/RehabMan/clover/downloads/) with the same settings as we did on the USB, but now install it on your Drive, not on the USB.  
+
+2. We need the developer tools to use Rehabman's script. Since you have internet working, you can simply download it with this command. If prompted, select Install. Type in the Terminal:
+```
+xcode-select --install
+```
+3. After it's installed, we are going to make a new folder in the Downloads folder, where we clone the HP Probook repo from github, type in the Terminal:
+```
+mkdir ~/Downloads/Projects
+cd ~/Downloads/Projects
+git clone https://github.com/RehabMan/HP-ProBook-4x30s-DSDT-Patch probook.git
+```
+4. Now we are going to download and install kexts and tools from the repo.
+```
+cd ~/Downloads/Projects/probook.git
+./download.sh
+```
+5. Wait until it finishes, then type in this:
+```
+./install_downloads.sh
+```
+6. We have to disable hibernation mode, because on hackintoshes it's not supported.
+```
+sudo pmset -a hibernatemode 0
+sudo rm /var/vm/sleepimage
+sudo mkdir /var/vm/sleepimage
+```
+7. Here is where the real magic happens, now we going to build the SSDT and the config.plist files.
+```
+cd ~/Downloads/Projects/probook.git
+./build.sh
+```
+8. These SSDT patches and the config.plist must be installed to the EFI partition of your Drive. To mount it we need this commands:
+```
+cd ~/Downloads/Projects/probook.git
+./mount_efi.sh
+```
+9. 
+```
+./install_acpi.sh help
+
+```
