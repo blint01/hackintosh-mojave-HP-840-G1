@@ -16,4 +16,7 @@ Here you can check the different models: https://support.hp.com/lv-en/document/c
 
 ## Creating the USB Installer
 I think this one is the hardest part. You need the Mojave installer file from the AppStore, but here comes the problem, it's only accessible from Macs. There is two thing you can do: 
-1. Look for a friend, family member, anyone who has a real mac and ask them to make a bootable USB for you.
+1. Look for a friend, family member, anyone who has a real mac and ask them to make a bootable USB for you. 
+   - Follow [this tutorial](https://9to5mac.com/2018/06/18/how-to-create-a-bootable-macos-mojave-10-14-usb-install-drive-video/) and after it's done, install [Rehabman's Clover bootloader](https://bitbucket.org/RehabMan/clover/downloads/) on the USB.
+   - 
+2. Download and install a Hackintosh dmg file, I think hackintoshzone
