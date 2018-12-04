@@ -13,3 +13,6 @@ My 840 G1 config:
 - **WIFI**: Intel Dual Band Wireless-N 7260NB 802.11 a/b/g/n (2 x2 ) WiFi
 
 Here you can check the different models: https://support.hp.com/lv-en/document/c03961746
+
+## Creating the USB Installer
+I think this one is the hardest part. You need the Mojave installer file from the AppStore, but here comes the problem, it's only accessible from Macs. There is two thing you can do: 1. Look for a friend, family member, anyone who has a real mac and ask them to make a bootable USB for you.
