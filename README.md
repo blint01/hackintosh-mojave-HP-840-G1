@@ -20,9 +20,8 @@ Sadly you can't use a Virtual MacOS to create the USB, because it makes corrupte
 
 I think this one is the hardest part. You need the Mojave installer file from the AppStore, but here comes the problem, it's only accessible from Macs. There is two thing you can do: 
 1. Look for a friend, family member, anyone who has a real mac and ask them to make a bootable USB for you. 
-   - Follow [this tutorial](https://www.imore.com/how-create-bootable-installer-mac-operating-system) and 
-> From this part, you can do everything in a VM MacOS!
-
+   - Follow [this tutorial](https://www.imore.com/how-create-bootable-installer-mac-operating-system). 
+ From this part, you can do everything in a VM MacOS!
    - After you are successfully created the bootable USB, install [Rehabman's Clover bootloader](https://bitbucket.org/RehabMan/clover/downloads/) on the USB. 
    
    
