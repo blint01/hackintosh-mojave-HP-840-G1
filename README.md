@@ -30,7 +30,8 @@ I think this one is the hardest part. You need the Mojave installer file from th
    - Download the USBconfig.plist file from [my repository](/usbconfig.plist) and paste it to the USB's EFI Partition in EFI->CLOVER, then rename it to config.plist. You can delete the old one or if you want to play it safe, rename it to something else.
    - If my usbconfig.plist doesn't work for you, you have to make one for yourself or download one from somewhere else.
    
-## BIOS Settings
+## BIOS Settings  
+###### *Spam the F10 key*
 
 Go to Advanced
    - Device configuration
@@ -43,6 +44,15 @@ Go to Advanced
 Save and reboot.
 
 ## Install
+###### *Spam the F9 key and select External Device*
+1. Clover will greet you. Boot from the USB. If you can't boot, you can play with the boot parameters under the "gear" icon. -x (safe boot), -v (verbose), there are many more, google it.
+
+<img src="/images/cloverusbinstall.png" width=500>
+2. For me it was super slow, probably because of the USB2, it took almost 8 mins to get here:<img src="/images/macinstall.jpg" width=500>
+3. Choose Disk Utility, from View select "Show all Device". Then select you Drive, not the partition! Click on Erase, from Format select APFS, Scheme should be GUID Partition Map. Close Disk Utility.
+<img src="/images/diskutil.png" width=500>
+4. Click on Install macOS. Accept everything and install it on your Drive. Don't worry it will take a lot of time. The installer will reboot your system, but don't worry, boot from your USB and in Clover select the Boot from Drive option.
+5. <img src="/images/installwelcome.jpg" width=500>
 
 
    
