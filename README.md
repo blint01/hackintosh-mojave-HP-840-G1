@@ -25,7 +25,8 @@ I think this one is the hardest part. You need the Mojave installer file from th
    
    - Here click on the "Change Install Location..." first, select the USB and then click on "Customize". In the Customize menu, select "Install for UEFI booting only" and "Install Clover in the ESP", among the Drivers64UEFI leave the ones that are already selected, but tick the VBoxHFS-64 and ApfsDriverLoader-64. Install and you are done.
    - Download the essential kexts from Rehabman's repo: [USBInjectAll](https://bitbucket.org/RehabMan/os-x-usb-inject-all/downloads/), [VoodooPS2Controller](https://bitbucket.org/RehabMan/os-x-voodoo-ps2-controller/downloads/), [FakeSMC](https://bitbucket.org/RehabMan/os-x-fakesmc-kozlek/downloads/), [IntelMausiEthernet](https://bitbucket.org/RehabMan/os-x-intel-network/downloads/), unzip them, copy the .kext files from the Release folders.
-   - Now we need to download [Clover Configurator](https://mackie100projects.altervista.org/download-clover-configurator/). Install it, then open it. Under the "Mount EFI" section find you'r USB's EFI Partition and click on "Mount Partition".
+   - Now we need to download [Clover Configurator](https://mackie100projects.altervista.org/download-clover-configurator/). Install it, then open it. Under the "Mount EFI" section find you'r USB's EFI Partition and click on "Mount Partition". Now you'll see a new EFI partition in your Finder. Open it and navigate to EFI->CLOVER->kexts->Other and copy the previously downloaded and extraceted kexts. 
+   - Download the USBconfig.plist file from [here](). 
    
    
 2. Download and install a Hackintosh dmg file, I think hackintoshzone
