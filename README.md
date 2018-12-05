@@ -101,8 +101,12 @@ cd ~/Downloads/Projects/probook.git
 cd ~/Downloads/Projects/probook.git
 ./mount_efi.sh
 ```
-9. 
+9. To install the config type in:
 ```
-./install_acpi.sh help
-
+./install_acpi.sh install_8x0g1_haswell
+```
+10. 
+```
+cd ~/Downloads/Projects/probook.git
+cp ./config/config_8x0_G1_Haswell.plist /Volumes/EFI/EFI/Clover/config.plist
 ```
