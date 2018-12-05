@@ -21,8 +21,8 @@ But I recommend you to boot a live Linux Mint to see which config you have. Goog
 Sadly, you can't use a Virtual MacOS to create the USB, because it makes corrupted installers.
 
 I think this one is the hardest part. You need the Mojave installer file from the AppStore, but it's only accessible from Macs. There are two things you can do: 
-1. Download and install a Hackintosh dmg file, from hackintoshzone or from Olarila. Maybe you could try to download a VirtualBox MacOS and make one there, but I never tried these.
-2. Look for a friend, family member, anyone who has a real mac and ask them to make a bootable USB for you. This is what I did.
+- Download and install a Hackintosh dmg file, from hackintoshzone or from Olarila. Maybe you could try to download a VirtualBox MacOS and make one there, but I never tried these.
+- Look for a friend, family member, anyone who has a real mac and ask them to make a bootable USB for you. This is what I did.
    - Follow [this tutorial](https://www.imore.com/how-create-bootable-installer-mac-operating-system). 
    - *From this part, you can do everything in a [MacOS VM](https://www.wikigain.com/install-macos-sierra-10-12-virtualbox/)!* After you are successfully created the bootable USB, install [Rehabman's Clover bootloader](https://bitbucket.org/RehabMan/clover/downloads/) on the USB as follows:<img src="/images/cloverinstall.png" width=600>
    
