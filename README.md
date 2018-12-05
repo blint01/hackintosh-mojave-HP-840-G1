@@ -2,6 +2,12 @@ Hackintosh 10.14.1 guide for HP Elitebook 840 G1
 
 This is a detailed macOS Mojave 10.14.1 Vanilla install guide for HP Elitebook 840 G1 , based on [RehabMan's HP guide](https://www.tonymacx86.com/threads/guide-hp-probook-elitebook-zbook-using-clover-uefi-hotpatch.261719/). [This guide](https://hackintosh.gitbook.io/-r-hackintosh-vanilla-desktop-guide/) is also really useful.
 
+- [Creating the USB Installer](#creating-the-usb-installer)
+- [BIOS Settings]()
+- [Install](#Install)
+- [Post Install]()
+
+
 My 840 G1 config:
 - **CPU**: i5-4210U (Haswell)
 - **SSD**: ADATA 128GB
