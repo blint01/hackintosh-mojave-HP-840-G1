@@ -101,11 +101,17 @@ cd ~/Downloads/Projects/probook.git
 cd ~/Downloads/Projects/probook.git
 ./mount_efi.sh
 ```
-9. To install the config type in:
+9. To install the SSDT patches, type in:
 ```
+cd ~/Downloads/Projects/probook.git
 ./install_acpi.sh install_8x0g1_haswell
 ```
-10. 
+10. To install the config.plist, type in:
+```
+cd ~/Downloads/Projects/probook.git
+cp ./config/config_8x0_G1_Haswell.plist /Volumes/EFI/EFI/Clover/config.plist
+```
+11. Now you have to edit your config.plist with Clover Configurator, but first make a copy of the config.plist, which we just copied to the EFI partition. *Clover Configurator can erase important settings from the config.plist, this is why we don't edit the original config.plist*
 ```
 cd ~/Downloads/Projects/probook.git
 cp ./config/config_8x0_G1_Haswell.plist /Volumes/EFI/EFI/Clover/config.plist
