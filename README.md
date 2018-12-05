@@ -1,11 +1,12 @@
-Hackintosh 10.14.1 guide for HP Elitebook 840 G1
+# Hackintosh 10.14.1 guide for HP Elitebook 840 G1
 
 This is a detailed macOS Mojave 10.14.1 Vanilla install guide for HP Elitebook 840 G1 , based on [RehabMan's HP guide](https://www.tonymacx86.com/threads/guide-hp-probook-elitebook-zbook-using-clover-uefi-hotpatch.261719/). [This guide](https://hackintosh.gitbook.io/-r-hackintosh-vanilla-desktop-guide/) is also really useful.
 
+**Contents**:
 - [Creating the USB Installer](#creating-the-usb-installer)
-- [BIOS Settings]()
-- [Install](#Install)
-- [Post Install]()
+- [BIOS Settings](#bios-settings)
+- [Install](#install)
+- [Post Install](#post-install)
 
 
 My 840 G1 config:
@@ -26,7 +27,7 @@ But I recommend you to boot a live Linux Mint to see which config you have. Goog
 > Prerequisites: at least 8GB+ pendrive, mine was USB2, but in theory USB3 going to work just fine too. Based on experiences, it's more likely to work without problems on USB2. Format it to MacOS Extended (Journaled) and GUID Partition Map. You need a macOS to config all the things that are we going to do, a Virtual one going to do the job, but not making the USB, see it later.
 
 I think this one is the hardest part. You need the Mojave installer file from the AppStore, but it's only accessible from Macs. There are two things you can do: 
-- Download and install a Hackintosh dmg file, from hackintoshzone or from Olarila. Maybe you could try to download a VirtualBox MacOS and make one there, but I never tried these. More experienced hackintoshers say that Virtual MacOS creates corrupted installers.
+- Download and install a Hackintosh dmg file, from hackintoshzone or from Olarila. Maybe you could try to install a VirtualBox MacOS and make one there, but I never tried these. More experienced hackintoshers say that Virtual MacOS creates corrupted installers.
 - Look for a friend, family member, anyone who has a real mac and ask them to make a bootable USB for you. This is what I did.
    - Follow [this tutorial](https://www.imore.com/how-create-bootable-installer-mac-operating-system). 
    - *From this part, you can do everything in a [MacOS VM](https://www.wikigain.com/install-macos-sierra-10-12-virtualbox/)!* After you are successfully created the bootable USB, install [Rehabman's Clover bootloader](https://bitbucket.org/RehabMan/clover/downloads/) on the USB as follows:<img src="/images/cloverinstall.png" width=600>
