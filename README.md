@@ -111,8 +111,5 @@ cd ~/Downloads/Projects/probook.git
 cd ~/Downloads/Projects/probook.git
 cp ./config/config_8x0_G1_Haswell.plist /Volumes/EFI/EFI/Clover/config.plist
 ```
-11. Now you have to edit your config.plist with Clover Configurator, but first make a copy of the config.plist, which we just copied to the EFI partition. *Clover Configurator can erase important settings from the config.plist, this is why we don't edit the original config.plist*
-```
-cd ~/Downloads/Projects/probook.git
-cp ./config/config_8x0_G1_Haswell.plist /Volumes/EFI/EFI/Clover/config.plist
-```
+11. Make a copy of the config.plist and edit it with Clover Configurator. Go to the SMBIOS section and from there click on the up and down arrow from the right. Select MacBookAir6,2. At the Serial Number field there is a Generate New button, hit it a couple of times, just to make sure it's totaly random. Save it and close Clover Configurator. *Clover Configurator can erase important settings from the config.plist, this is why we don't edit the original config.plist*<img src="/images/cloverplist.png" width=500>
+12. Now open the original and the edited config.plist with TextEdit and copy from the edited into the original config.plist. Save it. And reboot!
