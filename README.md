@@ -113,5 +113,11 @@ cp ./config/config_8x0_G1_Haswell.plist /Volumes/EFI/EFI/Clover/config.plist
 ```
 11. Make a copy of the config.plist and edit it with Clover Configurator. Go to the SMBIOS section and from there click on the up and down arrow from the right. Select MacBookAir6,2. At the Serial Number field there is a Generate New button, hit it a couple of times, just to make sure it's totaly random. Save it and close Clover Configurator. *Clover Configurator can erase important settings from the config.plist, this is why we don't edit the original config.plist*<img src="/images/cloverplist.png" width=500>
 12. Now open the original and the edited config.plist with TextEdit and copy from the edited into the original config.plist. Save it. And reboot!
-
-13. After all this, my sound card wasn't recognized at all, so I had to try other layouts. From the [AppleALC supported codecs site](https://github.com/acidanthera/AppleALC/wiki/Supported-codecs) you can see that layout 3, 12, 13, 33, 84 is supported by IDT92HD91BXX. The patched SSDT
+13. After all this, my sound card wasn't recognized at all, so I had to try other layouts. From the [AppleALC supported codecs site](https://github.com/acidanthera/AppleALC/wiki/Supported-codecs) you can see that layout 3, 12, 13, 33, 84 is supported by IDT92HD91BXX, you have to try each one, to see which is the best for you. The patched SSDTs are located under your EFI partition EFI->CLOVER->ACPI->PATCHED, you have to edit SSDT-8x0G1h.aml file with MaciASL, it's probably the default program to open .aml files.<img src="/images/maciasl.png" width=500>
+14. In MaciASL find "layout" with command+F, you will find 2 matches. The default value is ```0x0D```, that means layout 13. Switch both ```0x0D``` after layout to either of these: 
+- layout 3 =  ```0x03```
+- layout 12 = ```0x0C```
+- layout 33 = ```0x21```
+- layout 84 = ```0x54```
+- For me the layout 84 worked perfectly!
+After you made the changes to both value, save it and reboot your computer, to see if it worked or not.
