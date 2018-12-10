@@ -154,4 +154,6 @@ I have tested the following features:
 - Mac App Store working
 - Messages/FaceTime, even though I didn't run through the guide 
 
-For Wifi and Bluetooth you have to replace your Wifi half mini PCI card to something that is supported by Apple. The HP 840 G1 doesn't have a Wifi whitelist, so in theory every card should work, but it has to be compatible with MacOS.
+For Wifi and Bluetooth you have to replace your Wifi half mini PCI card to something that is supported by Apple. The HP 840 G1 doesn't have a Wifi whitelist, so in theory every card should work, but it has to be compatible with MacOS. I replaced it with a BCM943224HMS and worked Out of the Box, probably with the already installed kexts.
+
+If you have any question, you can contact me on [reddit](https://www.reddit.com/user/blint01), or here.
